@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "962e58d8-a80a-4454-b2ae-fc253db79e16",
+		"name": "Task management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30524280"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"john\",\r\n    \"email\":\"john@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"john@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/users/auth"
+			},
+			"response": []
+		},
+		{
+			"name": "List tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZkN2M1NGU2YWRjOGQ4MjYwMDA2ODEiLCJpYXQiOjE3MTg0NTMxODAsImV4cCI6MTcxODQ1Njc4MH0.T93EHE258wnfZ152AN9FR-VhxE72qEPyys149EZ3OXQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/tasks/"
+			},
+			"response": []
+		},
+		{
+			"name": "Add task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZkN2M1NGU2YWRjOGQ4MjYwMDA2ODEiLCJpYXQiOjE3MTg0NTMxODAsImV4cCI6MTcxODQ1Njc4MH0.T93EHE258wnfZ152AN9FR-VhxE72qEPyys149EZ3OXQ"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\": \"Task_xyz\",\r\n    \"status\":\"ongoing\",\r\n    \"deadline\": \"2024-06-20T12:00:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/tasks/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZkN2M1NGU2YWRjOGQ4MjYwMDA2ODEiLCJpYXQiOjE3MTg0NTMxODAsImV4cCI6MTcxODQ1Njc4MH0.T93EHE258wnfZ152AN9FR-VhxE72qEPyys149EZ3OXQ"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\":\"Task_abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/tasks/666d8795ad324a266ab715ef"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZkN2M1NGU2YWRjOGQ4MjYwMDA2ODEiLCJpYXQiOjE3MTg0NTMxODAsImV4cCI6MTcxODQ1Njc4MH0.T93EHE258wnfZ152AN9FR-VhxE72qEPyys149EZ3OXQ"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/tasks/666d8795ad324a266ab715ef"
+			},
+			"response": []
+		},
+		{
+			"name": "List subtasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZkN2M1NGU2YWRjOGQ4MjYwMDA2ODEiLCJpYXQiOjE3MTg0NTMxODAsImV4cCI6MTcxODQ1Njc4MH0.T93EHE258wnfZ152AN9FR-VhxE72qEPyys149EZ3OXQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/tasks/666d87d487d527cb7ea4b4ee/subTasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Update subTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZkN2M1NGU2YWRjOGQ4MjYwMDA2ODEiLCJpYXQiOjE3MTg0NTMxODAsImV4cCI6MTcxODQ1Njc4MH0.T93EHE258wnfZ152AN9FR-VhxE72qEPyys149EZ3OXQ"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subtasks\": [{\r\n        \"subject\" : \"subtask_abc\",\r\n        \"status\":\"completed\",\r\n        \"deadline\": \"2024-06-20T12:00:00Z\"\r\n    }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/tasks/666d87d487d527cb7ea4b4ee/subTasks"
+			},
+			"response": []
+		}
+	]
+}
