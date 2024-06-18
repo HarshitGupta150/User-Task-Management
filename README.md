@@ -33,7 +33,7 @@ npm install --include=dev
 
 ```bash
 # Create a .env file using .env.example for environment variables
-PORT=3000
+PORT=your_port
 MONGO_URI=your_mongo_uri
 JWT_SECRET=your_secret_key
 
@@ -100,4 +100,4 @@ npm start
   - **Protected**: Yes
 
 ## Postman Collection
-- Import the postman collection provided in the project and use it to test the APIs.
+- Import the postman collection (Task management.postman_collection.json) provided at root location in the project and use it to test the APIs.

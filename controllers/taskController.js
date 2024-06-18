@@ -128,6 +128,10 @@ const deleteTask = async (req, res) => {
       return res.status(404).json({ error: 'Task not found' });
     }
 
+    if(taskToDelete[0].deleted){
+      return res.status(200).json({ message: 'Task is already deleted' });
+    }
+
     // Mark the task as deleted
     taskToDelete[0].deleted = true;
 
@@ -205,8 +209,9 @@ const updateSubtasks = async (req, res) => {
       if (existingSubtask) {
         existingSubtask.deadline = updatedSubtask.deadline || existingSubtask.deadline;
         existingSubtask.status = updatedSubtask.status || existingSubtask.status;
+        existingSubtask.deleted = updatedSubtask.deleted || existingSubtask.deleted;
       } else {
-        task[0].subtasks.push({ ...updatedSubtask, deleted: false });
+        task[0].subtasks.push({ ...updatedSubtask });
       }
     });
 
